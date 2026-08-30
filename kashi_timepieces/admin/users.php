@@ -1,0 +1,2 @@
+<?php $title="Users"; require "_top.php"; $users=$pdo->query("SELECT id,name,email,created_at FROM users ORDER BY created_at DESC")->fetchAll(); ?>
+<section class="panel"><h2>Registered Users</h2><table><tr><th>ID</th><th>Name</th><th>Email</th><th>Registration Date</th></tr><?php foreach($users as $u):?><tr><td><?=$u["id"]?></td><td><?=htmlspecialchars($u["name"])?></td><td><?=htmlspecialchars($u["email"])?></td><td><?=$u["created_at"]?></td></tr><?php endforeach;?></table></section><?php require "_bottom.php"; ?>
